@@ -9,10 +9,10 @@ rclpy.init()
 class Tim_Sub(Node):
     def __init__(self):
         super().__init__('tim_sub')
-        self.create_subscription(Count, 'count', self.cb, 10)
+        self.sub = self.create_subscription(Count, 'count', self.cb, 10)
 
-    def cb(msg, self):
-        self.get_logger().info("Listen: {msg}")
+    def cb(self, msg):
+        self.get_logger().info("Listen: %s" % msg)
 
 
 def main():
