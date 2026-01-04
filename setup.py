@@ -24,7 +24,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'vcount = rbsys25_as2.vcount:main', 
+            'vcount = rbsys25_as2.vcount:main',
+            'tim_sub = rbsys25_as2.tim_sub:main', 
         ],
     },
 )
