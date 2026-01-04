@@ -6,9 +6,9 @@ from count_msgs.msg import Count
 rclpy.init()
 
 
-class Tim_Sub(Node):
+class Sub_Etimer(Node):
     def __init__(self):
-        super().__init__('tim_sub')
+        super().__init__('sub_etimer')
         self.sub = self.create_subscription(Count, 'count', self.cb, 10)
 
     def cb(self, msg):
@@ -16,5 +16,5 @@ class Tim_Sub(Node):
 
 
 def main():
-    node = Tim_Sub()
+    node = Sub_Etimer()
     rclpy.spin(node)

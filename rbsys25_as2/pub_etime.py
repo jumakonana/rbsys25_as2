@@ -4,9 +4,9 @@ from count_msgs.msg import Count
 
 rclpy.init()
 
-class Vcount(Node):
+class Pub_Etimer(Node):
     def __init__(self):
-        super().__init__('vcount')         
+        super().__init__('pub_etimer')         
 
         self.pub = self.create_publisher(Count, "count", 10)
         self.create_timer(1, self.cb)
@@ -20,11 +20,11 @@ class Vcount(Node):
         self.n += 1
                
         msg = Count()
-        msg.period = self.period
-        msg.deadline = self.deadline
+        msg.minute = self.period
+        msg.second = self.deadline
 
         self.pub.publish(msg)
 
 def main():
-    node = Vcount()
+    node = Pub_Etimer()
     rclpy.spin(node)
