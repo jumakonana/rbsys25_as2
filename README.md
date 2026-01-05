@@ -30,22 +30,38 @@ pub_etimeとsub_etimeを立ち上げるローンチファイル
 
 rbsys25_as2/
 ├── LICENSE
+
 ├── README.md
 ├── launch
+
 │   └── etime.launch.py
+
 ├── package.xml
+
 ├── rbsys25_as2
+
 │   ├── __init__.py
+
 │   ├── pub_etime.py
+
 │   └── sub_etime.py
+
 ├── resource
+
 │   └── rbsys25_as2
+
 ├── setup.cfg
+
 ├── setup.py
+
 └── test
+
     ├── test.bash
+
     ├── test_copyright.py
+
     ├── test_flake8.py
+
     └── test_pep257.py
 
 
