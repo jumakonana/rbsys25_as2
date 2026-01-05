@@ -8,6 +8,7 @@
 以下2つのノードが利用するメッセージファイル
 
 2つのuint8型のデータを扱う
+minuteを分, secondが秒の値となる
 ```
 uint8 minute
 uint8 second
@@ -21,7 +22,7 @@ secondが60になった際, 値を0に変えminuteの値を増加させる
 ### sub_etime
 Count.msgのデータを受け取るサブスクライバを持つ
 
-受け取ったデータを表示する
+受け取ったデータをminute, secondの順で表示する
 
 ### etime.launch.py
 pub_etimeとsub_etimeを立ち上げるローンチファイル
@@ -61,7 +62,7 @@ $ ros2 run rbsys25_as2 pub_etime
 ### sub_etime
 sub_etimeを立ち上げた後にpub_etimeを立ち上げた際の動作
 
-以下は1分2秒経過までの出力である
+以下は1分2秒以上経過した時点の出力である
 ```
 $ ros2 run rbsys25_as2 sub_etime
 [INFO] [1767613647.196071738] [sub_etime]:  0 : 0
@@ -74,14 +75,25 @@ $ ros2 run rbsys25_as2 sub_etime
 [INFO] [1767613868.336329557] [sub_etime]:  1 : 0
 [INFO] [1767613869.332994804] [sub_etime]:  1 : 1
 [INFO] [1767613870.333520614] [sub_etime]:  1 : 2
-
+(以下略)
 ```
 
 ### etime.launch.py
 ```
 $ ros2 launch rbsys25_as2 etime.launch.py
-
+[INFO] [launch]: (中略)
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [pub_etime-1]: process started with pid [11109]
+[INFO] [sub_etime-2]: process started with pid [11111]
+[sub_etime-2] [INFO] [1767615544.696885071] [sub_etime]:  0 : 0
+[sub_etime-2] [INFO] [1767615545.673830359] [sub_etime]:  0 : 1
+[sub_etime-2] [INFO] [1767615546.688745423] [sub_etime]:  0 : 2
+[sub_etime-2] [INFO] [1767615547.673776452] [sub_etime]:  0 : 3
+[sub_etime-2] [INFO] [1767615548.695054454] [sub_etime]:  0 : 4
+[sub_etime-2] [INFO] [1767615549.672213309] [sub_etime]:  0 : 5
+(以下略)
 ```
+
 
 ## 必要なソフト
 - Python
