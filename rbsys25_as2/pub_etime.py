@@ -16,15 +16,20 @@ class Pub_Etimer(Node):
 
     def cb(self):   
 
-        self.get_logger().info(f"{self.n}")
+        self.get_logger().info(f"{self.minute} {self.second}")
                
         msg = Count()
         msg.minute = self.minute
         msg.second = self.second
 
-        self.minute += 1
+       
         self.second += 1
         
+        if self.second == 60:
+            self.minute += 1
+            self.second = 0
+
+
         self.pub.publish(msg)
 
 def main():
