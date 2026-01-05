@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 jumakonana
+# SPDX-License-Identifier: BSD-3-Clause
+
 import launch
 import launch.actions
 import launch.substitutions

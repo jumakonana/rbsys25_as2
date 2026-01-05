@@ -1,9 +1,9 @@
+# SPDX-FileCopyrightText: 2026 jumakonana
+# SPDX-License-Identifier: BSD-3-Clause
+
 import rclpy
 from rclpy.node import Node
 from count_msgs.msg import Count
-
-
-rclpy.init()
 
 
 class Sub_Etime(Node):
@@ -16,6 +16,7 @@ class Sub_Etime(Node):
 
 
 def main():
+    rclpy.init()
     node = Sub_Etime()
     rclpy.spin(node)
 

@@ -1,8 +1,12 @@
 #!/bin/bash
+# SPDX-FileCopyrightText: 2026 jumakonana
+# SPDX-License-Identifier: BSD-3-Clause
+
 
 ng () {
-	echo ${1}に問題あり
+	echo ${1}が違うよ
 }
+
 
 res=0
 
@@ -24,4 +28,3 @@ out=$(cat /tmp/rbsys25_as2.log | grep '  0 : 60')
 [ "$?" = 1 ] || ng "$LINENO"
 
 exit $res
-
