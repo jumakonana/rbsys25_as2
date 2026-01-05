@@ -16,7 +16,7 @@ class Pub_Etimer(Node):
 
     def cb(self):   
 
-        self.get_logger().info(f"{self.minute} {self.second}")
+        self.get_logger().info(f"{self.minute} : {self.second}")
                
         msg = Count()
         msg.minute = self.minute
