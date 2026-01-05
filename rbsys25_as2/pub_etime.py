@@ -4,9 +4,9 @@ from count_msgs.msg import Count
 
 rclpy.init()
 
-class Pub_Etimer(Node):
+class Pub_Etime(Node):
     def __init__(self):
-        super().__init__('pub_etimer')         
+        super().__init__('pub_etime')         
 
         self.pub = self.create_publisher(Count, "count", 10)
         self.create_timer(1, self.cb)
@@ -33,5 +33,8 @@ class Pub_Etimer(Node):
         self.pub.publish(msg)
 
 def main():
-    node = Pub_Etimer()
+    node = Pub_Etime()
     rclpy.spin(node)
+
+    node.destroy_node()
+    rclpy.shutdown()
