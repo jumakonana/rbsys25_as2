@@ -3,21 +3,27 @@
 
 [分]：[秒]単位で経過時間を計測するパッケージ
 
-## 各ノードの役割
-###pub_etime
+## 各ノード, ファイルの機能
+### Count.msg
+以下2つのノードが利用するメッセージファイル
+2つのuint8型のデータを扱う
+```
+uint8 minute
+uint8 second
+```
 
+### pub_etime
+Count.msgのデータを流すパブリッシャを持つ
 
-###sub_etime
+### sub_etime
+Count.msgのデータを受け取るサブスクライバを持つ
+
+### etime.launch.py
+pub_etimeとsub_etimeを立ち上げるローンチファイル
 
 ## 動作
 ### それぞれ
 
-seqコマンドで生成した配列の中央値を返す
-
-```
-$ seq 5 | ./median
-3
-```
 
 
 ## テスト環境
