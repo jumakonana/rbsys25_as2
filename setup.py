@@ -17,7 +17,7 @@ setup(
     zip_safe=True,
     maintainer='jumakonana',
     maintainer_email='s24C1079LG@s.chibakoudai.jp',
-    description='TODO: Package description',
+    description='a package counting elapsed times',
     license='BSD-3-Clause',
     extras_require={
         'test': [

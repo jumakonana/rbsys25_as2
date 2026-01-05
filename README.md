@@ -52,6 +52,7 @@ rbsys25_as2/
 ```
 
 ## 動作例
+- ノードの立ち上げやファイルの実行の前に, count_msgsの設置と`colcon build`及び`source`の実行が必要である
 ### pub_etime
 標準出力には何も出ない
 ```
@@ -93,7 +94,6 @@ $ ros2 launch rbsys25_as2 etime.launch.py
 [sub_etime-2] [INFO] [1767615549.672213309] [sub_etime]:  0 : 5
 (以下略)
 ```
-
 
 ## 必要なソフト
 - Python
