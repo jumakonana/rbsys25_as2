@@ -11,18 +11,20 @@ class Pub_Etimer(Node):
         self.pub = self.create_publisher(Count, "count", 10)
         self.create_timer(1, self.cb)
         self.n = 0
-        self.period = 4
-        self.deadline = 10
+        self.minute = 0
+        self.second = 0 
 
     def cb(self):   
 
         self.get_logger().info(f"{self.n}")
-        self.n += 1
                
         msg = Count()
-        msg.minute = self.period
-        msg.second = self.deadline
+        msg.minute = self.minute
+        msg.second = self.second
 
+        self.minute += 1
+        self.second += 1
+        
         self.pub.publish(msg)
 
 def main():
