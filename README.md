@@ -52,7 +52,7 @@ rbsys25_as2/
 
 ## 動作例
 ### pub_etime
-標準出力は何も行わない
+標準出力には何も出ない
 ```
 $ ros2 run rbsys25_as2 pub_etime 
 
@@ -82,6 +82,10 @@ $ ros2 run rbsys25_as2 sub_etime
 $ ros2 launch rbsys25_as2 etime.launch.py
 
 ```
+
+## 必要なソフト
+- Python
+- ROS 2
 
 ## テスト環境
 - Ubuntu 22.04 LTS
