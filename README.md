@@ -50,17 +50,30 @@ rbsys25_as2/
     └── test_pep257.py
 ```
 
-## 動作
+## 動作例
 ### pub_etime
-
+標準出力は何も行わない
 ```
 $ ros2 run rbsys25_as2 pub_etime 
 
 ```
 
 ### sub_etime
+sub_etimeを立ち上げた後にpub_etimeを立ち上げた際の動作
+
+以下は1分2秒経過までの出力である
 ```
 $ ros2 run rbsys25_as2 sub_etime
+[INFO] [1767613647.196071738] [sub_etime]:  0 : 0
+[INFO] [1767613648.179546596] [sub_etime]:  0 : 1
+[INFO] [1767613649.192466834] [sub_etime]:  0 : 2
+(中略)
+[INFO] [1767613865.335443376] [sub_etime]:  0 : 57
+[INFO] [1767613866.336463348] [sub_etime]:  0 : 58
+[INFO] [1767613867.337530843] [sub_etime]:  0 : 59
+[INFO] [1767613868.336329557] [sub_etime]:  1 : 0
+[INFO] [1767613869.332994804] [sub_etime]:  1 : 1
+[INFO] [1767613870.333520614] [sub_etime]:  1 : 2
 
 ```
 
