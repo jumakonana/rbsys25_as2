@@ -14,6 +14,9 @@ uint8 minute
 uint8 second
 ```
 
+- Count.msgを持つパッケージcount_msgs
+https://github.com/jumakonana/count_msgs.git
+
 ### pub_etime
 Count.msgのデータを流すパブリッシャを持つ
 
