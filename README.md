@@ -14,7 +14,7 @@ uint8 minute
 uint8 second
 ```
 
-- Count.msgを持つパッケージcount_msgs
+- Count.msgを持つパッケージcount_msgsのリポジトリ
 https://github.com/jumakonana/count_msgs.git
 
 ### pub_etime
