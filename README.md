@@ -1,34 +1,39 @@
 # 経過時間表示パッケージ
 ![test](https://github.com/jumakonana/rbsys25_as2/actions/workflows/test.yml/badge.svg)
 
-[分]：[秒]の形式で経過時間を計測するパッケージ
+ROS2で[分]：[秒]の形式で経過時間を計測・表示するパッケージ
+パブリッシャとサブスクライバによる通信を行い, 独自メッセージ`Count.msg`を送受信する
 
 ## 各ノード, ファイルの機能
-### Count.msg
-以下2つのノードが利用するメッセージファイル
-
-2つのuint8型のデータを扱う
-minuteが分, secondが秒の値となる
-```
-uint8 minute
-uint8 second
-```
-
-- Count.msgを持つパッケージcount_msgsのリポジトリ
-https://github.com/jumakonana/count_msgs.git
 
 ### pub_etime
-Count.msgのデータを流すパブリッシャを持つ
+Count.msg型のメッセージをパブリッシュする
 
-secondが60になった際, 値を0に変えminuteの値を増加させる
+secondを1秒毎に増加させ, 60になった際値を0に変えminuteの値を1増加させる
 
 ### sub_etime
-Count.msgのデータを受け取るサブスクライバを持つ
+`Count.msg`をサブスクライブする
 
 受け取ったデータをminute, secondの順で表示する
 
 ### etime.launch.py
-pub_etimeとsub_etimeを立ち上げるローンチファイル
+`pub_etime`と`sub_etime`を立ち上げるローンチファイル
+
+
+### Count.msg
+
+本パッケージで使用するメッセージ型(他のリポジトリで定義)
+
+以下のデータを定義する
+```
+minute　(分)
+second  (秒)　
+```
+
+`Count.msg`の詳細やインストールは以下のリポジトリを参照
+
+- count_msgs [https://github.com/jumakonana/count_msgs.git]
+
 
 ### パッケージの構造
 
@@ -57,10 +62,9 @@ rbsys25_as2/
 ## 動作例
 - ノードの立ち上げやファイルの実行の前に, count_msgsの設置と`colcon build`及び`source`の実行が必要である
 ### pub_etime
-標準出力には何も出ない
 ```
 $ ros2 run rbsys25_as2 pub_etime 
-
+<標準出力無し>
 ```
 
 ### sub_etime
