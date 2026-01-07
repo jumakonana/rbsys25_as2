@@ -2,17 +2,18 @@
 ![test](https://github.com/jumakonana/rbsys25_as2/actions/workflows/test.yml/badge.svg)
 
 ROS2で[分]：[秒]の形式で経過時間を計測・表示するパッケージ
-パブリッシャとサブスクライバによる通信を行い, 独自メッセージ`Count.msg`を送受信する
+
+パブリッシャとサブスクライバによる通信を行い, 独自メッセージ型`Count`を使用する
 
 ## 各ノード, ファイルの機能
 
 ### pub_etime
-Count.msg型のメッセージをパブリッシュする
+Count型のメッセージをパブリッシュするノード
 
-secondを1秒毎に増加させ, 60になった際値を0に変えminuteの値を1増加させる
+secondを1秒毎に1増加させ, 60になった際値を0に変えminuteの値を1増加させる
 
 ### sub_etime
-`Count.msg`をサブスクライブする
+Count型のメッセージをサブスクライブするノード
 
 受け取ったデータをminute, secondの順で表示する
 
@@ -22,9 +23,9 @@ secondを1秒毎に増加させ, 60になった際値を0に変えminuteの値�
 
 ### Count.msg
 
-本パッケージで使用するメッセージ型(他のリポジトリで定義)
+本パッケージで使用する独自メッセージ型`Count`を定義するファイル(他のリポジトリに位置)
 
-以下のデータを定義する
+以下のデータを生成する
 ```
 minute　(分)
 second  (秒)　
@@ -60,7 +61,7 @@ rbsys25_as2/
 ```
 
 ## 動作例
-- ノードの立ち上げやファイルの実行の前に, count_msgsの設置と`colcon build`及び`source`の実行が必要である
+- ノードの立ち上げやファイルの実行の前に, `count_msgs`の設置と`colcon build`及び`source`の実行が必要である
 ### pub_etime
 ```
 $ ros2 run rbsys25_as2 pub_etime 
